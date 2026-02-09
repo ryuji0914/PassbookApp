@@ -3,15 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>通帳管理アプリ</title>
-    <link rel="stylesheet" href="Start.css">
+    <link rel="stylesheet" th:href="@{/Start.css}">
 </head>
 <body>
 <h1 style="text-align: center">通帳管理アプリ</h1>
+<div class="center">
+    <select name="year">
+        <option value="2025">2025年</option>
+        <option value="2025">2026年</option>
+        <option value="2025">2027年</option>
+        <option value="2025">2028年</option>
+        <option value="2025">2029年</option>
+    </select>
+</div>
 <div class="container">
     <div class="button">
-        <button type="submit" class="item">1月</button>
-        <button type="submit" class="item">2月</button>
-        <button type="submit" class="item">3月</button>
+        <button type="submit" name="month">1月</button>
+        <button type="submit" name="month">2月</button>
+        <button type="submit" name="month">3月</button>
+
+        <button type="submit" name="month">4月</button>
+        <button type="submit" name="month">5月</button>
+        <button type="submit" name="month">6月</button>
+
+        <button type="submit" name="month">7月</button>
+        <button type="submit" name="month">8月</button>
+        <button type="submit" name="month">9月</button>
+
+        <button type="submit" name="month">10月</button>
+        <button type="submit" name="month">11月</button>
+        <button type="submit" name="month">12月</button>
     </div>
 </div>
 </body>
