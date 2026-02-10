@@ -1,0 +1,26 @@
+/* 1行を横並びにする */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* ラベルの幅を固定して揃える */
+.form-row label {
+    width: 120px;
+    font-weight: bold;
+}
+
+/* 入力欄の幅を統一 */
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 250px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+/* テキストエリアの高さ調整 */
+.form-row textarea {
+    height: 80px;
+}

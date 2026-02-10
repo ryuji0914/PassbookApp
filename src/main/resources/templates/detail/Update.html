@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更新画面</title>
+    <link rel="stylesheet" th:href="@{/registerFormat.css}">
+</head>
+<body>
+<h1>更新画面</h1>
+<form id="form" name="form" action="#" method="POST">
+
+    <div class="form-row">
+        <label for="category">カテゴリー</label>
+        <select id="category" name="category">
+            <option value="">------</option>
+            <option value="val1">食費</option>
+            <option value="val2">交通費</option>
+            <option value="val3">交際費</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="payment">支払い方法</label>
+        <select id="payment" name="payment">
+            <option value="">------</option>
+            <option value="val1">現金</option>
+            <option value="val2">クレジットカード</option>
+            <option value="val3">Paypay</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="amount">金額</label>
+        <input type="text" id="amount" name="amount">
+    </div>
+
+    <div class="form-row">
+        <label for="continue">継続支払い</label>
+        <select id="continue" name="continue">
+            <option value="">------</option>
+            <option value="val1">1ヶ月</option>
+            <option value="val2">2ヶ月</option>
+            <option value="val3">3ヶ月</option>
+            <option value="val4">4ヶ月</option>
+            <option value="val5">5ヶ月</option>
+            <option value="val6">6ヶ月</option>
+            <option value="val7">1年</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="date">登録日</label>
+        <input type="date" id="date" name="date">
+    </div>
+
+    <div class="form-row">
+        <label for="textarea">メモ</label>
+        <textarea id="textarea" name="textarea"></textarea>
+    </div>
+
+    <p><input type="submit" value="保存"></p>
+</form>
+
+</body>
+</html>
