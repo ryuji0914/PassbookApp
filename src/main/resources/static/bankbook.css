@@ -1,12 +1,28 @@
+.tables {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
 table {
-    margin: 0 auto;
     border-collapse: collapse;
 }
 
-table, th, td {
+/* すべてのテーブルの th と td に適用 */
+table th,
+table td {
     border: 1px solid #333;
-}
-
-th, td {
     padding: 8px 12px;
 }
+
+.button {
+    margin-left: 680px;
+    margin-bottom: 10px;
+}
+
+.button a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+

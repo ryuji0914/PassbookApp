@@ -1,33 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}"
+>
 <head>
     <meta charset="UTF-8">
     <title>月の支出一覧</title>
     <link rel="stylesheet" th:href="@{/bankbook.css}">
 </head>
 <body>
-<table>
-<thead>
-    <tr>
-        <th>id</th>
-        <th>カテゴリー</th>
-        <th>支払い方法</th>
-        <th>金額</th>
-        <th>継続支払い</th>
-        <th>メモ</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>1</td>
-        <td>趣味</td>
-        <td>現金</td>
-        <td>56000</td>
-        <td>2回</td>
-        <td>高級のイヤホンを購入しました。</td>
-    </tr>
-</tbody>
-</table>
-
+<h1>~月の支出一覧</h1>
+<div class="button">
+    <a th:href="@{/create}">
+        <button type="button">新規登録</button>
+    </a>
+    <a th:href="@{/update}">
+        <button type="button">目標金額</button>
+    </a>
+</div>
+<div class="tables">
+    <table class="passbook">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>id</th>
+            <th>カテゴリー</th>
+            <th>支払い方法</th>
+            <th>金額</th>
+            <th>継続支払い</th>
+            <th>メモ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <button type="submit" name="edit">編集</button>
+            </td>
+            <td>
+                <button type="submit" name="delete">削除</button>
+            </td>
+            <td>1</td>
+            <td>趣味</td>
+            <td>現金</td>
+            <td>56000</td>
+            <td>2回</td>
+            <td>高級のイヤホンを購入しました。</td>
+        </tr>
+    </tbody>
+    </table>
+    <table class="goal">
+        <tr>
+            <th>合計金額</th>
+            <td>3000円</td>
+        </tr>
+        <tr>
+            <th>目標金額</th>
+            <td>5000円</td>
+        </tr>
+        <tr>
+            <th>差分</th>
+            <td>2000円</td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
