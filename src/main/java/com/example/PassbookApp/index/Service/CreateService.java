@@ -15,4 +15,8 @@ public class CreateService {
         return createRepository.select();
     }
 
+    public void create(CreateEntity createEntity){
+        createRepository.create(createEntity);
+    }
+
 }

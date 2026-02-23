@@ -7,25 +7,25 @@
 </head>
 <body>
 <h1> 新規登録画面</h1>
-<form id="form" name="form" action="#" method="POST">
+<form id="form" name="form" th:action="@{/detail}" method="POST">
 
     <div class="form-row">
         <label for="category">カテゴリー</label>
         <select id="category" name="category">
-            <option value="">------</option>
-            <option value="val1">食費</option>
-            <option value="val2">交通費</option>
-            <option value="val3">交際費</option>
+            <option value="" disabled selected>------</option>
+            <option value="食費">食費</option>
+            <option value="交通費">交通費</option>
+            <option value="交際費">交際費</option>
         </select>
     </div>
 
     <div class="form-row">
-        <label for="payment">支払い方法</label>
-        <select id="payment" name="payment">
-            <option value="">------</option>
-            <option value="val1">現金</option>
-            <option value="val2">クレジットカード</option>
-            <option value="val3">Paypay</option>
+        <label for="method">支払い方法</label>
+        <select id="method" name="method">
+            <option value="" disabled selected>------</option>
+            <option value="現金">現金</option>
+            <option value="クレジットカード">クレジットカード</option>
+            <option value="PayPay">Paypay</option>
         </select>
     </div>
 
@@ -35,16 +35,15 @@
     </div>
 
     <div class="form-row">
-        <label for="continue">継続支払い</label>
-        <select id="continue" name="continue">
-            <option value="">------</option>
-            <option value="val1">1ヶ月</option>
-            <option value="val2">2ヶ月</option>
-            <option value="val3">3ヶ月</option>
-            <option value="val4">4ヶ月</option>
-            <option value="val5">5ヶ月</option>
-            <option value="val6">6ヶ月</option>
-            <option value="val7">1年</option>
+        <label for="cont">継続支払い</label>
+        <select id="cont" name="cont">
+            <option value="" disabled selected>------</option>
+            <option value="ONE_MONTH">1ヶ月</option>
+            <option value="TWO_MONTH">2ヶ月</option>
+            <option value="THREE_MONTH">3ヶ月</option>
+            <option value="SIX_MONTH">6ヶ月</option>
+            <option value="ONE_YEAR">1年</option>
+
         </select>
     </div>
 
@@ -54,8 +53,8 @@
     </div>
 
     <div class="form-row">
-        <label for="textarea">メモ</label>
-        <textarea id="textarea" name="textarea"></textarea>
+        <label for="memo">メモ</label>
+        <textarea id="memo" name="memo"></textarea>
     </div>
 
     <p><input type="submit" value="保存"></p>

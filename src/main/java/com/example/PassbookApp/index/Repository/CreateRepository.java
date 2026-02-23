@@ -12,13 +12,18 @@ import java.util.List;
 @Mapper
 @Repository
 public interface CreateRepository {
-    @Select("SELECT id,category,method,money,memo FROM passbook;")
+    @Select("SELECT id,category,method,amount,Continue,memo FROM passbook;")
     public List<CreateEntity> select();
 
     @Insert("""
-    INSERT INTO passbook (id,category,method,money,memo)
-    VALUES (#{passbook.category},#{passbook.method},#{passbook.money},#{passbook.memo})
+    INSERT INTO passbook (category,method,amount,Continue,memo)
+    VALUES (#{passbook.category},#{passbook.method},#{passbook.amount},#{passbook.Continue},#{passbook.memo})
     """)
     void create(@Param("passbook") CreateEntity createentity);
+
+   // <insert id="insert" parameterType="CreateEntity">
+   // INSERT INTO table (category, method, amount, cont, memo)
+   // VALUES (#{category}, #{method}, #{amount}, #{Continue}, #{memo})
+//</insert>
 
 }

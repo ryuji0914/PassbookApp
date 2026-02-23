@@ -4,25 +4,63 @@
     gap: 40px;
 }
 
+/* ★ table-layout: fixed を外す（これが全列が広がる原因） */
 table {
     border-collapse: collapse;
 }
 
-/* すべてのテーブルの th と td に適用 */
-table th,
+/* データ行 */
 table td {
     border: 1px solid #333;
     padding: 8px 12px;
 }
 
+/* 項目名（ヘッダー行）だけ薄くする */
+table th {
+    border: 1px solid #333;
+    padding: 2px 6px;
+    line-height: 1.1;
+    white-space: nowrap;
+    height: 20px;
+    font-size: 0.9rem;
+}
+
 .button {
-    margin-left: 680px;
+    margin-left: 820px;
     margin-bottom: 10px;
 }
+
+.passbook td button {
+    width: 80px;        /* ← 好きな幅に調整 */
+    padding: 6px 10px;  /* ← ボタンの余白 */
+    white-space: nowrap; /* ← 改行させない */
+}
+
 
 .button a {
     display: inline-block;
     text-decoration: none;
+    padding: 2px 8px; /* ← 上下の余白を減らす */
+    line-height: 1.1;
+    /* ← 行間を詰める */
+    white-space: nowrap;
 }
 
+.button-container { white-space: nowrap; }
 
+/* passbook テーブルの幅だけ固定 */
+.passbook {
+    width: 800px;
+}
+
+/* 折り返しは維持 */
+.passbook th,
+.passbook td {
+    word-wrap: break-word;
+}
+
+/* ★ メモ列だけ幅を広げる（8列目） */
+.passbook th:nth-child(8),
+.passbook td:nth-child(8) {
+    width: 270px;
+}

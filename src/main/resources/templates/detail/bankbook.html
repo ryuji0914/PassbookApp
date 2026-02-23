@@ -15,7 +15,7 @@
     <a th:href="@{/create}">
         <button type="button">新規登録</button>
     </a>
-    <a th:href="@{/update}">
+    <a th:href="@{/targetMoney}">
         <button type="button">目標金額</button>
     </a>
 </div>
@@ -34,34 +34,34 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr th:each="passbook : ${find}" th:object="${passbook}">
             <td>
                 <button type="submit" name="edit">編集</button>
             </td>
             <td>
                 <button type="submit" name="delete">削除</button>
             </td>
-            <td>1</td>
-            <td>趣味</td>
-            <td>現金</td>
-            <td>56000</td>
-            <td>2回</td>
-            <td>高級のイヤホンを購入しました。</td>
+            <td th:text="*{id}"></td>
+            <td th:text="*{category}"></td>
+            <td th:text="*{method}"></td>
+            <td th:text="*{amount}"></td>
+            <td th:text="*{Continue.label}"></td>
+            <td th:text="*{memo}"></td>
         </tr>
     </tbody>
     </table>
     <table class="goal">
-        <tr>
+        <tr th:each="Opportunity : ${find}" th:object="${Opportunity}">
             <th>合計金額</th>
-            <td>3000円</td>
+            <td></td>
         </tr>
         <tr>
             <th>目標金額</th>
-            <td>5000円</td>
+            <td></td>
         </tr>
         <tr>
             <th>差分</th>
-            <td>2000円</td>
+            <td></td>
         </tr>
     </table>
 </div>
