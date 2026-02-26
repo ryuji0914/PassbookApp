@@ -8,10 +8,11 @@ CREATE TABLE passbook
     memo TEXT
 );
 
-CREATE TABLE Opportunity
+CREATE TABLE Amounts
 (
     id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    opportunityMoney INT,
-    differenceMoney INT,
-    sumMoney INT
-)
+    totalAmount INT,
+    targetAmount INT,
+    difference INT
+);
+

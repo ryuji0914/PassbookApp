@@ -51,17 +51,17 @@
     </tbody>
     </table>
     <table class="goal">
-        <tr th:each="Opportunity : ${find}" th:object="${Opportunity}">
+        <tr th:each="Amounts : ${find}" th:object="${Amounts}">
             <th>合計金額</th>
-            <td></td>
+            <td th:text="*{totalAmount}"></td>
         </tr>
         <tr>
             <th>目標金額</th>
-            <td></td>
+            <td th:text="*{targetAmount}"></td>
         </tr>
         <tr>
             <th>差分</th>
-            <td></td>
+            <td th:text="*{difference}"></td>
         </tr>
     </table>
 </div>

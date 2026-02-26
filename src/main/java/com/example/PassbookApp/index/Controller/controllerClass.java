@@ -1,6 +1,7 @@
 package com.example.PassbookApp.index.Controller;
 
 import com.example.PassbookApp.index.Entity.CreateForm;
+import com.example.PassbookApp.index.Entity.RegisterForm;
 import com.example.PassbookApp.index.Service.CreateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -41,6 +42,12 @@ public class controllerClass {
     @PostMapping("/detail")
     public String createrecord(@Validated CreateForm form, Model model){
         createservice.create(form.createEntity());
+        return "redirect:/detail";
+    }
+
+    @PostMapping("/detailA")
+    public String createMoney(@Validated RegisterForm form,Model model){
+        createservice.register(form.registerEntity());
         return "redirect:/detail";
     }
 
