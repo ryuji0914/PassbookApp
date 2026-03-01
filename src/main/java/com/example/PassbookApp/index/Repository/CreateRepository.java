@@ -15,6 +15,9 @@ public interface CreateRepository {
     @Select("SELECT id,category,method,amount,Continue,memo FROM passbook;")
     public List<CreateEntity> select();
 
+    @Select("SELECT COALESCE(SUM(amount),0) FROM passbook")
+    int sumAmount();
+
     @Insert("""
     INSERT INTO passbook (category,method,amount,Continue,memo)
     VALUES (#{passbook.category},#{passbook.method},#{passbook.amount},#{passbook.Continue},#{passbook.memo})

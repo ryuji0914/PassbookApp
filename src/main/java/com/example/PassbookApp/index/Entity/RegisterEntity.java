@@ -4,13 +4,20 @@ package com.example.PassbookApp.index.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jdk.jfr.DataAmount;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public record RegisterEntity(
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class RegisterEntity{
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        Long id,
-        int totalAmount,
-        int targetAmount,
-        int difference
-) {
+        Long id;
+        private Integer totalAmount;
+        private Integer targetAmount;
+        private Integer difference;
 }
+

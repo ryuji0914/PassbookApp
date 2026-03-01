@@ -18,11 +18,28 @@ public class CreateService {
         return createRepository.select();
     }
 
+    public List<RegisterEntity> findOpportunity(){return registerRepository.select();}
+
     public void create(CreateEntity createEntity){
         createRepository.create(createEntity);
+        int total = createRepository.sumAmount();
+
+        List<RegisterEntity> list = registerRepository.select();
+        if(!list.isEmpty()){
+            RegisterEntity latest = list.get(list.size()-1);
+            latest.setTotalAmount(total);
+            latest.setDifference(total - latest.getTargetAmount());
+
+            registerRepository.register(latest);
+
+        }
     }
 
     public void register(RegisterEntity registerEntity){
+        int total = createRepository.sumAmount();
+        registerEntity.setTotalAmount(total);
+        registerEntity.setTargetAmount(registerEntity.getTargetAmount());
+        registerEntity.setDifference(total - registerEntity.getTargetAmount());
         registerRepository.register(registerEntity);
     }
 

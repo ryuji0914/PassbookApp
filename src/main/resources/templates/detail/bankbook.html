@@ -50,8 +50,8 @@
         </tr>
     </tbody>
     </table>
-    <table class="goal">
-        <tr th:each="Amounts : ${find}" th:object="${Amounts}">
+    <table class="goal" th:if="${findOpportunity != null}" th:object="${findOpportunity}">
+        <tr>
             <th>合計金額</th>
             <td th:text="*{totalAmount}"></td>
         </tr>

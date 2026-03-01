@@ -15,3 +15,15 @@ VALUES
         '例です'
     );
 
+INSERT INTO Amounts
+(
+     totalAmount,
+     targetAmount,
+     difference
+)
+VALUES
+    (
+    '0',
+    '0',
+    '0'
+);

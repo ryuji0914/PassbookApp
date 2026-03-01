@@ -1,6 +1,7 @@
 package com.example.PassbookApp.index.Controller;
 
 import com.example.PassbookApp.index.Entity.CreateForm;
+import com.example.PassbookApp.index.Entity.RegisterEntity;
 import com.example.PassbookApp.index.Entity.RegisterForm;
 import com.example.PassbookApp.index.Service.CreateService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +21,14 @@ public class controllerClass {
     @GetMapping("/detail")
     public String detail(Model model){
         var find = createservice.find();
+        var findOpportunity = createservice.findOpportunity();
         model.addAttribute("find",find);
+        RegisterEntity latest = null;
+        if (findOpportunity != null && !findOpportunity.isEmpty()) {
+            latest = findOpportunity.get(findOpportunity.size() - 1);
+        }
+        model.addAttribute("findOpportunity", latest);
+
         return "detail/bankbook";
     }
 
@@ -47,7 +55,9 @@ public class controllerClass {
 
     @PostMapping("/detailA")
     public String createMoney(@Validated RegisterForm form,Model model){
-        createservice.register(form.registerEntity());
+        RegisterEntity entity = new RegisterEntity();
+        entity.setTargetAmount(form.targetAmount());
+        createservice.register(entity);
         return "redirect:/detail";
     }
 

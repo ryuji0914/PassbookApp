@@ -1,9 +1,14 @@
 package com.example.PassbookApp.index.Entity;
 
+import jakarta.validation.constraints.NotNull;
+
 public record CreateForm(
+    @NotNull
     String category,
+    @NotNull
     String method,
     int amount,
+    @NotNull
     String cont,
     String memo
 ) {
